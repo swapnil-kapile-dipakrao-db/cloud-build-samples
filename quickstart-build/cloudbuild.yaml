@@ -17,7 +17,7 @@ steps:
 - name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
   script: |
     gcloud builds submit --region=europe-west1-b --tag europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2.
-  automapSubstitutions: true
+  #automapSubstitutions: true
  images:
 - 'europe-west1-b-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:v2'
  [END cloudbuild_quickstart_build]
