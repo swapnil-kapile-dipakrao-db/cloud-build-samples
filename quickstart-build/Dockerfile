@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_build_dockerfile]
-FROM alpine
+FROM artifactory.sdlc.ctl.gcp.db.com/dkr-all/dkr-io/python:3.10.4-buster
 COPY quickstart.sh /
 CMD ["/quickstart.sh"]
 # [END cloudbuild_quickstart_build_dockerfile]
