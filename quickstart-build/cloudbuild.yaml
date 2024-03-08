@@ -23,9 +23,9 @@
  #[END cloudbuild_quickstart_build]
 steps:
 - name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
-args: [ 'build', '-t', '{IMAGE_NAME}', '.' ]
+  args: [ 'build', '-t', '{IMAGE_NAME}', '.' ]
 - name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
-args: ['push', '{IMAGE_NAME}']
-ogsBucket: 'gs://bucket-external-tables'
+  args: ['push', '{IMAGE_NAME}']
+ 
 
 
