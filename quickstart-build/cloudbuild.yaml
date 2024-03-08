@@ -13,19 +13,19 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_build]
+# steps:
+#- name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
+  # script: |
+   #  docker build -t europe-west1-b-docker.pkg.dev/$PROJECT_ID/eu.gcr.io/quickstart-docker-repo/quickstart-image:v2
+  # automapSubstitutions: true
+ #images:
+#- 'europe-west1-b-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:v2'
+ #[END cloudbuild_quickstart_build]
 steps:
 - name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
-  script: |
-     docker build -t europe-west1-b-docker.pkg.dev/$PROJECT_ID/eu.gcr.io/quickstart-docker-repo/quickstart-image:v2
-   automapSubstitutions: true
- images:
-- 'europe-west1-b-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:v2'
- #[END cloudbuild_quickstart_build]
-#steps:
-#- name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
-#args: [ 'build', '-t', '{IMAGE_NAME}', '.' ]
-#- name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
-#args: ['push', '{IMAGE_NAME}']
-#ogsBucket: 'gs://bucket-external-tables'
+args: [ 'build', '-t', '{IMAGE_NAME}', '.' ]
+- name: 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster'
+args: ['push', '{IMAGE_NAME}']
+ogsBucket: 'gs://bucket-external-tables'
 
 
