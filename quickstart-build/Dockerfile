@@ -13,8 +13,16 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_build_dockerfile]
-FROM alpine
-COPY quickstart.sh /
-CMD ["/quickstart.sh"]
+FROM python:3.9
 
+# Copying my app to the image
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
+
+# Install production dependencies form the requirements.txt file
+RUN pip install -r requirements.txt
+
+# Startup command to serve our app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 main:app
 # [END cloudbuild_quickstart_build_dockerfile]
