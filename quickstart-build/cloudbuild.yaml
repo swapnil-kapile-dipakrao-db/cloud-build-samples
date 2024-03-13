@@ -30,10 +30,10 @@
 steps:
 - name: 'eu.gcr.io/cloud-builders/docker'
   script: |
-    docker build eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster@sha256/c754af42623be05fe7e9699429210af1bb342fa4d7bb26026d9dcf08517de716:v7 
+    docker build eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2 .
   automapSubstitutions: true
 images:
-- 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster@sha256/c754af42623be05fe7e9699429210af1bb342fa4d7bb26026d9dcf08517de716:v7'
+- 'eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2'
 logsBucket: 'gs://cloud-build-test1'
 options:
       logging: GCS_ONLY
