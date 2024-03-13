@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # [START cloudbuild_quickstart_build_dockerfile]
-FROM eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster@sha256/c754af42623be05fe7e9699429210af1bb342fa4d7bb26026d9dcf08517de716
+FROM c754af42623be05fe7e9699429210af1bb342fa4d7bb26026d9dcf08517de716
 COPY quickstart.sh /
 CMD ["/quickstart.sh"]
 
