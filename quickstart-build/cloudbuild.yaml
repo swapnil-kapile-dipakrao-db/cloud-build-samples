@@ -28,7 +28,7 @@
  # args: ['push', '{IMAGE_NAME}']
  
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'eu.gcr.io/cloud-builders/docker'
   script: |
     docker build eu.gcr.io/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2 .
   automapSubstitutions: true
