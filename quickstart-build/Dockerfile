@@ -16,4 +16,8 @@
 FROM alpine
 COPY quickstart.sh /
 CMD ["/quickstart.sh"]
+logsBucket: 'gs://cloud-build-test1'
+options:
+      logging: GCS_ONLY
+serviceAccount: 'projects/db-dev-2f4b-gcplabs-testing2/serviceAccounts/gcp-lab-171909-1-002-sa'
 # [END cloudbuild_quickstart_build_dockerfile]
