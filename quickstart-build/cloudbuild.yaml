@@ -28,27 +28,12 @@
  # args: ['push', '{IMAGE_NAME}']
  
 steps:
-  # Docker Build
-  - name: 'gcr.io/cloud-builders/docker'
-    args: [
-            'build',
-            '-t',
-            'europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v4',
-            '-t',
-            'europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v3',
-            '--cache-from',
-            'europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2',
-            '.'
-          ]
-
-  # Docker push to Google Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push',  'europe-west1-docker.pkg.dev//db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v4']
-
-# Store images in Google Artifact Registry 
+- name: 'eu.gcr.io/cloud-builders/docker'
+  script: |
+    docker build -t europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2 .
+  automapSubstitutions: true
 images:
-  - europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v4
-  - europe-west1-docker.pkg.dev//db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v3
+- 'europe-west1-docker.pkg.dev/db-dev-2f4b-gcplabs-testing2/custom_training_py3104_buster/quickstart-image:v2'
 logsBucket: 'gs://cloud-build-test1'
 options:
       logging: GCS_ONLY
